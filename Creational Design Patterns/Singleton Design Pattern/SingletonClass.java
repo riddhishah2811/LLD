@@ -55,7 +55,19 @@ class SingletonClass{
         System.out.println(billPugh.hashCode());
         System.out.println(billPugh.hashCode());
         System.out.println(billPugh.hashCode());
+
+        // Enum Singleton
+        System.out.println("\nEnum Singleton Pattern-->");
+        Singleton s = Singleton.SINGLETON;
+        System.out.println(s.hashCode());
+        System.out.println(s.hashCode());
+        System.out.println(s.hashCode());
         
     }
 
+}
+//  In this enum Singleton() works as a private static method.
+enum Singleton{
+    SINGLETON;
+    Singleton(){}
 }
