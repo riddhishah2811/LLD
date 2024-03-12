@@ -40,8 +40,19 @@ class SingletonClass{
             Thread t = new Thread(th,"SyThread - "+i);
             t.start();
         }
+        Thread.sleep(10);
+
+        // Double checked locking
+        System.out.println("Optimized Thread Safe Singleton (Double Checked Locking)-->");
+        DoubleCheckedLocking doubleCheckedLocking = DoubleCheckedLocking.getInstance();
+        System.out.println(doubleCheckedLocking.hashCode1());
+        System.out.println(doubleCheckedLocking.hashCode1());
+        System.out.println(doubleCheckedLocking.hashCode1());
+
 
     }
+
+   
 
     
 }
