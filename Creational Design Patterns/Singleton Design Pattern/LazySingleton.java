@@ -6,7 +6,7 @@ public class LazySingleton {
     
     public static LazySingleton getInstance(){
         if(lazySingleton == null){
-            return new LazySingleton();
+            lazySingleton =  new LazySingleton();
         }
         return lazySingleton;
     }
