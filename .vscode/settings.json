@@ -2,6 +2,7 @@
     "java.project.sourcePaths": [
         "Singleton Design Pattern",
         "Creational Design Patterns/Singleton Design Pattern",
-        "Creational Design Patterns"
+        "Creational Design Patterns",
+        "Creational Design Patterns/Factory Design Pattern"
     ]
 }
