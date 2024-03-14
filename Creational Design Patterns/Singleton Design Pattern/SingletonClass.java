@@ -1,4 +1,4 @@
-
+import java.lang.reflect.Constructor;
 
 class SingletonClass{
     public static void main(String args[]) throws InterruptedException{
@@ -62,6 +62,26 @@ class SingletonClass{
         System.out.println(s.hashCode());
         System.out.println(s.hashCode());
         System.out.println(s.hashCode());
+
+        System.out.println("\nUse Constructor reflection mechnism to make the constructor public and allow to create the object-->");
+        // Now we can use any of the above method of the singleton in the below code which is the reflection mechnism 
+        // In this mechinism once we convert the accessability to public (true) , 
+        // We can see that BillPugh is not working as a Singleton Pattern.
+        // We can do this for any of the above singleton pattern type.
+        BillPugh billPugh1 = BillPugh.getInstance();
+        BillPugh billPugh2= null;
+        try{
+            Constructor[] ctor = BillPugh.class.getDeclaredConstructors();
+            for(Constructor ct : ctor){
+                ct.setAccessible(true);
+                billPugh2 = (BillPugh)ct.newInstance();
+                break;
+            }
+        }catch(Exception e){
+            System.out.println(e);
+        }
+        System.out.println(billPugh1.hashCode());
+        System.out.println(billPugh2.hashCode());
         
     }
 
